@@ -37,6 +37,23 @@ describe('fs node module', () => {
     expect(dirPath).toContain('sey')
     expect(joined.endsWith('yolo')).toBeTruthy()
     expect(Array.isArray(dirs)).toBe(true)
-    expect(dirs).toEqual({ name: '.babelrc' })
+
+    // partial matching
+    expect(dirs[0]).toEqual(expect.objectContaining({ name: '.babelrc' }))
+  })
+
+  test('objectContaining multiple', () => {
+    const obj = {
+      name: 'Sey Kim',
+      tasks: 10,
+      powerLevel: 9001,
+    }
+
+    expect(obj).toEqual(
+      expect.objectContaining({
+        name: 'Sey Kim',
+        tasks: 10,
+      }),
+    )
   })
 })
