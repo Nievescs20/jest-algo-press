@@ -1,0 +1,27 @@
+{
+  "name": "merge-sort",
+  "version": "1.0.0",
+  "description": "Implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iseykim/merge-sort.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iseykim/merge-sort/issues"
+  },
+  "homepage": "https://github.com/iseykim/merge-sort#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/preset-env": "^7.15.0",
+    "@types/jest": "^27.0.1",
+    "chalk": "^4.1.2",
+    "jest": "^27.0.6"
+  }
+}
