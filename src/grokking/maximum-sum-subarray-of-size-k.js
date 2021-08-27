@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @link https://www.educative.io/courses/grokking-the-coding-interview/JPKr0kqLGNP
  * @course Grokking the Coding Interview
  * @problem Given an array of positive numbers and a positive number ‘k,’ find the maximum sum of any contiguous subarray of size ‘k’.
@@ -67,5 +67,3 @@ const res1 = maxSubArrayOptimized(3, arr)
 
 // console.log(res)
 console.log(res1)
-
-

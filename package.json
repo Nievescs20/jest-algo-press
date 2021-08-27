@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Implementation",
   "main": "index.js",
+  "engines": {
+    "node": ">=12",
+    "pnpm": ">=3"
+  },
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "preinstall": "npx only-allow pnpm"
   },
   "repository": {
     "type": "git",
