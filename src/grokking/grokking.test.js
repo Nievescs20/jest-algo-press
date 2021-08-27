@@ -9,21 +9,11 @@ describe('binary-tree-path-sum', () => {
   root.right.left = new TreeNode(10)
   root.right.right = new TreeNode(5)
 
-  let i = 0
-  afterEach(() => {
-    i = 0
-  })
-
-  test('should find', () => {
-    const inspect = 'some value'
-
+  test('should find the sum', () => {
     expect(hasPath(root, 23)).toBe(true)
-    expect(hasPath(root, 19)).toBe(false)
-    i = 15
   })
 
-  test('should ', () => {
-    expect()
-    console.log('empty')
+  test('should not find the sum', () => {
+    expect(hasPath(root, 19)).toBe(false)
   })
 })
