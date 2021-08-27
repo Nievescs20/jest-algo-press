@@ -36,5 +36,5 @@ export const hasPath = (root, sum) => {
   return hasPath(root.left, sum - root.val) || hasPath(root.right, sum - root.val)
 }
 
-console.log(hasPath(root, 23)) // true: 12 + 1 + 10
-console.log(hasPath(root, 19)) // false
+// console.log(hasPath(root, 23)) // true: 12 + 1 + 10
+// console.log(hasPath(root, 19)) // false

@@ -20,19 +20,19 @@ module.exports = {
 
   // The pattern Jest uses to detect test files.
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$',
-
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   // This option sets the URL for the jsdom environment.
   // It is reflected in properties such as location.href.
   // @see: https://github.com/facebook/jest/issues/6769
-  testURL: 'http://localhost/',
+  // testURL: 'http://localhost/',
 
   // @see: https://jestjs.io/docs/en/configuration#coveragethreshold-object
-  coverageThreshold: {
-    global: {
-      statements: 100,
-      branches: 95,
-      functions: 100,
-      lines: 100,
-    },
-  },
-};
+  // coverageThreshold: {
+  //   global: {
+  //     statements: 100,
+  //     branches: 95,
+  //     functions: 100,
+  //     lines: 100,
+  //   },
+  // },
+}

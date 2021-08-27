@@ -6,6 +6,7 @@ specifiers:
   '@types/jest': ^27.0.1
   chalk: ^4.1.2
   jest: ^27.0.6
+  jest-watch-typeahead: ^0.6.4
 
 devDependencies:
   '@babel/cli': 7.14.8
@@ -13,6 +14,7 @@ devDependencies:
   '@types/jest': 27.0.1
   chalk: 4.1.2
   jest: 27.0.6
+  jest-watch-typeahead: 0.6.4_jest@27.0.6
 
 packages:
 
@@ -3247,6 +3249,22 @@ packages:
       jest-get-type: 27.0.6
       leven: 3.1.0
       pretty-format: 27.0.6
+    dev: true
+
+  /jest-watch-typeahead/0.6.4_jest@27.0.6:
+    resolution: {integrity: sha512-tGxriteVJqonyrDj/xZHa0E2glKMiglMLQqISLCjxLUfeueRBh9VoRF2FKQyYO2xOqrWDTg7781zUejx411ZXA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      jest: ^26.0.0 || ^27.0.0
+    dependencies:
+      ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      jest: 27.0.6
+      jest-regex-util: 27.0.6
+      jest-watcher: 27.0.6
+      slash: 3.0.0
+      string-length: 4.0.2
+      strip-ansi: 6.0.0
     dev: true
 
   /jest-watcher/27.0.6:
