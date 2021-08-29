@@ -7,6 +7,7 @@ description: 'Something that you want to do! you can!'
 
 > {{ $frontmatter.description }}
 
+- Need to make sidebar config
 - Vitepress + Jest
 
 ## What is this
@@ -21,10 +22,10 @@ import Counter from '../components/Counter.vue'
 
 Oh cool!!
 
-
 ```ts
 interface Pokemon {
   yes: string
 }
 ```
+
 <Counter />
