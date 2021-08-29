@@ -1,7 +1,7 @@
 import { BF_twoNumSum, POINTERS_twoNumSum, HASH_twoNumSum } from './1-two-num-sum'
 import { BF_maxProfit } from './2-max-profit'
 
-xdescribe('two-num-sum', () => {
+describe('two-num-sum', () => {
   let array = [2, 4, 1, 3, 5]
   let target = 7
 

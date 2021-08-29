@@ -9,13 +9,20 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "serve": "vitepress serve src"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iseykim/merge-sort.git"
   },
-  "keywords": ["jest", "algorithm", "javascript"],
+  "keywords": [
+    "jest",
+    "algorithm",
+    "javascript"
+  ],
   "author": "Sey Kim",
   "license": "MIT",
   "bugs": {
@@ -28,6 +35,7 @@
     "@types/jest": "^27.0.1",
     "chalk": "^4.1.2",
     "jest": "^27.0.6",
-    "jest-watch-typeahead": "^0.6.4"
+    "jest-watch-typeahead": "^0.6.4",
+    "vitepress": "^0.16.1"
   }
 }
