@@ -15,9 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/iseykim/merge-sort.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["jest", "algorithm", "javascript"],
+  "author": "Sey Kim",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/iseykim/merge-sort/issues"
   },

@@ -2,12 +2,16 @@
 
 ## Setup
 
-must install pnpm
+Must install pnpm to download, re: `scripts, preinstall`
 
 ```
-pnpm i
+pnpm i && pnpm test
 ```
 
 ## Usage
 
 Install `Jest Runner` to run tests inline
+
+## Todo
+
+- [ ] set up vitepress... in a docs directory?
