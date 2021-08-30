@@ -8,7 +8,7 @@
     "pnpm": ">=3"
   },
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest",
     "preinstall": "npx only-allow pnpm",
     "dev": "vitepress dev src",
     "build": "vitepress build src",

@@ -63,3 +63,9 @@ if (i === arr1.length) {
 ## Quick Sort
 
 ## Insertion Sort
+
+`N^2` in worst case, works best in small arrays.
+
+- `i`
+
+<<< @/sorting/insertion-sort/index.js#snippet
