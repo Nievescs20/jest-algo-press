@@ -1,27 +1,26 @@
 # Jest
 
-## Example.js
+- Reference: [spyOn, stub](https://codewithhugo.com/jest-fn-spyon-stub-mock/)
 
-<!-- <<< @/jest/example.js -->
+## Stub
 
-## Example.test
+Create a stub. Call the stub
 
-<!-- <<< @/jest/example.test.js#fs-node -->
+<<< @/jest/spyOn.test.js#1{3}
 
-## `spyOn`
+## Mocking
 
-- [spyon](https://codewithhugo.com/jest-fn-spyon-stub-mock/)
-
-Given this object...
+Given this object, which has one function `doSomething`:
 
 <<< @/jest/spyOn.test.js#const
 
-We are going to test some functionalities.
+`spyOn` takes the object, and key (string. When the function that is spied on is called, the `spyOn` object keeps track.
 
-<<< @/jest/spyOn.test.js#1
+<<< @/jest/spyOn.test.js#spy{3}
 
+### `spyOn` Examples
 
-### Mocking
+<<< @/jest/spyOn.test.js#spy1{3,9}
 
 We are given a function that takes in an object, and calls an increment function.
 
@@ -33,4 +32,16 @@ Notice that `app` takes in a counter object and just calls the `increment` funct
 
 Mocking an entire object does not mutate anything. With `spyOn`, we **do mutate**, and can check the result as well.
 
-<<< @/jest/spyOn.test.js#count2
+<<< @/jest/spyOn.test.js#count2{2,5}
+
+### Multiple `jest.toHaveBeenCalledWith`
+
+<<< @/jest/spyOn.test.js#mult1
+
+<<< @/jest/spyOn.test.js#mult2
+
+<<< @/jest/spyOn.test.js#mult3
+
+Multiple calls:
+
+<<< @/jest/spyOn.test.js#mult4

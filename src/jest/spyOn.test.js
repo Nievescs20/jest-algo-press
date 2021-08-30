@@ -1,13 +1,12 @@
-//#region const
-const myObj = {
-  doSomething() {
-    console.log('does something')
-  },
-}
-//#endregion const
-
 //#region 1
 describe('spyOn features', () => {
+  //#region const
+  const myObj = {
+    doSomething() {
+      console.log('does something')
+    },
+  }
+  //#endregion conit
   test('stub .toBeCalled()', () => {
     const stub = jest.fn()
     stub()
@@ -24,6 +23,7 @@ describe('spyOn features', () => {
   })
   //#endregion spy
 
+  //#region spy1
   test('spyOn().mockImplementation', () => {
     const somethingSpy = jest.spyOn(myObj, 'doSomething').mockImplementation()
     myObj.doSomething()
@@ -36,6 +36,7 @@ describe('spyOn features', () => {
     expect(somethingSpy).toHaveBeenCalled()
     expect(somethingSpy).toHaveBeenCalledTimes(1)
   })
+  //#endregion spy1
 })
 
 describe('spyOn methods', () => {
@@ -69,4 +70,63 @@ describe('spyOn methods', () => {
     expect(counter.getCount()).toEqual(1)
   })
   //#endregion count2
+})
+
+describe('je.toHaveBeenCalledWith(): asserting on multiple calls', () => {
+  //#region mult1
+  let state = 0
+  const counter = {
+    add(val) {
+      state += val
+    },
+    getCount() {
+      return state
+    },
+  }
+
+  const singleAdd10 = counter => {
+    counter.add(10)
+  }
+
+  const multipleAdd = counter => {
+    counter.add(15)
+    counter.add(20)
+  }
+  //#endregion mult1
+
+  //#region mult2
+  test('singleAdd10 > jest single call', () => {
+    const mockCounter = {
+      add: jest.fn(),
+    }
+    singleAdd10(mockCounter)
+    expect(mockCounter.add).toHaveBeenCalledWith(10)
+  })
+  //#endregion mult2
+
+  //#region mult3
+  test('singleAdd > jest.spyOn() single call', () => {
+    const addSpy = jest.spyOn(counter, 'add')
+    singleAdd10(counter)
+    expect(addSpy).toHaveBeenCalledWith(10)
+  })
+  //#endregion mult3
+
+  //#region mult4
+  test('multipleAdd > mock', () => {
+    const mockCounter = {
+      add: jest.fn(),
+    }
+    multipleAdd(mockCounter)
+    expect(mockCounter.add).toHaveBeenCalledWith(15)
+    expect(mockCounter.add).toHaveBeenCalledWith(20)
+  })
+
+  test('multipleAdd > spyOn()', () => {
+    const addSpy = jest.spyOn(counter, 'add')
+    multipleAdd(counter)
+    expect(addSpy).toHaveBeenCalledWith(15)
+    expect(addSpy).toHaveBeenCalledWith(20)
+  })
+  //#endregion mult4
 })
