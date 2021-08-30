@@ -18,7 +18,7 @@ defineProps({
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 1rem;
 	row-gap: 1rem;
-	justify-items: center;
+	justify-items: stretch;
 }
 @media only screen and (max-width: 600px) {
 	body {

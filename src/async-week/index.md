@@ -1,31 +1,12 @@
 ---
 title: Async Week
+description: 'Async week information & assets'
 editLink: true
 draft: true
 ---
 
-<script setup>
-// console.log($frontmatter)
-// useData()
-import { useData } from 'vitepress'
-const { frontmatter } = useData()
-console.log(frontmatter.editLink)
-console.log(frontmatter.title)
-
-</script>
-
-<style>
-  h1 {
-    color: pink;
-  }
-</style>
-
 # {{ $frontmatter.title }}
 
-Async Week links are here:
+> {{ $frontmatter.description }}
 
-```js
-const omg = 'OMG'
-```
-
-<img src="/ss1.png">
+Algorithm & Data Structure REACTOs are numbered 1 to 4

@@ -1,7 +1,12 @@
-import { BF_twoNumSum, POINTERS_twoNumSum, HASH_twoNumSum } from './1-two-num-sum'
-import { BF_maxProfit } from './2-max-profit'
+import {
+  BF_twoNumSum,
+  POINTERS_twoNumSum,
+  HASH_twoNumSum,
+  sorting,
+} from './1-two-num-sum/1-two-num-sum'
+import { BF_maxProfit } from './2-max-profit/2-max-profit'
 
-describe('two-num-sum', () => {
+describe('1 two-num-sum', () => {
   let array = [2, 4, 1, 3, 5]
   let target = 7
 
@@ -20,9 +25,14 @@ describe('two-num-sum', () => {
   test('should find sum by hash method', () => {
     expect(HASH_twoNumSum(array, target)).toBe(true)
   })
+
+  test('should sort by built in', () => {
+    expect(sorting(array)).toEqual([1, 2, 3, 4, 5])
+    expect(sorting([1, 100, 2])).toEqual([1, 2, 100])
+  })
 })
 
-describe('max-profit', () => {
+describe('2 max-profit', () => {
   let prices = [7, 1, 5, 3, 6, 4]
 
   test('should find max profit by brute force', () => {

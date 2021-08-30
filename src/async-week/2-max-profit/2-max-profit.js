@@ -1,3 +1,4 @@
+import { blue } from 'chalk'
 /**
  * @title Max Profit
  * @prompt Find Max profit
@@ -15,21 +16,22 @@
  * - return false at end
  */
 
+//#region BF
 export const BF_maxProfit = arr => {
-  let maxprofit = 0
+  let maxProfit = 0
   for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i; j < arr.length; j++) {
+    for (let j = i + 1; j < arr.length; j++) {
       const profit = arr[j] - arr[i]
-      if (profit > maxprofit) {
-        maxprofit = profit
+      if (profit > maxProfit) {
+        maxProfit = profit
       }
     }
   }
-  return maxprofit
+  return maxProfit
 }
+//#endregion BF
 
-// []
-
+//#region OP
 export const OP_maxProfit = arr => {
   let min = Infinity
   let maxProfit = 0
@@ -43,4 +45,4 @@ export const OP_maxProfit = arr => {
   }
   return maxProfit
 }
-// console.log(BF_maxProfit(arr))
+//#endregion OP

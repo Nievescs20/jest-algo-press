@@ -1,18 +1,13 @@
 import { example, sayHi, matchHey, fsFn } from './example'
 
-/**
- * -p: filename
- * -t: regex by test, includes describe block and individual test
- */
-
-xdescribe('example 1', () => {
+describe('example 1', () => {
   test('runs', () => {
     const r = example()
     expect(r).toBe(1)
   })
 })
 
-xdescribe('another test block', () => {
+describe('another test block', () => {
   test('sayHi correct type', () => {
     expect(typeof sayHi()).toBe('string')
   })
@@ -30,8 +25,8 @@ xdescribe('another test block', () => {
   })
 })
 
+//#region fs-node
 describe('fs node module', () => {
-  // do something wild
   const { dirPath, joined, dirs } = fsFn()
   test('should contain...', () => {
     expect(dirPath).toContain('sey')
@@ -57,3 +52,4 @@ describe('fs node module', () => {
     )
   })
 })
+//#endregion fs-node

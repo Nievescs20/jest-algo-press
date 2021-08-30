@@ -1,0 +1,24 @@
+{
+  "Setup": {
+    "prefix": "index",
+    "description": "Sets up front matter, title and description",
+    "body": [
+      "---",
+      "title: $1",
+      "description: $2",
+      "---",
+      "",
+      "# {{ \\$frontmatter.title }}",
+      "",
+      "> {{ \\$frontmatter.description }}",
+      "",
+      "$0"
+    ],
+    "scope": "markdown"
+  },
+  "Toggle": {
+    "prefix": "detail",
+    "description": "toggles and summary",
+    "body": ["<details><summary>$1</summary>", "$0", "</details>"]
+  }
+}

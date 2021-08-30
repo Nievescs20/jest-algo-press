@@ -15,6 +15,7 @@
  * - return false at end
  */
 
+//#region BF
 export const BF_twoNumSum = (arr, tar) => {
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = i + 1; j < arr.length; j++) {
@@ -23,6 +24,7 @@ export const BF_twoNumSum = (arr, tar) => {
   }
   return false
 }
+//#endregion BF
 
 /**
  * @time O(log N)
@@ -35,8 +37,13 @@ export const BF_twoNumSum = (arr, tar) => {
  * - return false at end of loop
  */
 
+export const sorting = arr => {
+  return arr.sort((a, b) => a - b)
+}
+
+//#region POINTERS
 export const POINTERS_twoNumSum = (arr, tar) => {
-  arr.sort()
+  arr.sort((a, b) => a - b)
   let i = 0,
     j = arr.length - 1
   while (i < j) {
@@ -47,6 +54,7 @@ export const POINTERS_twoNumSum = (arr, tar) => {
   }
   return false
 }
+//#endregion POINTERS
 
 /**
  * @time O(N)
@@ -61,6 +69,7 @@ export const POINTERS_twoNumSum = (arr, tar) => {
  * - Key in Obj: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
  */
 
+//#region HASH
 export const HASH_twoNumSum = (arr, tar) => {
   let hash = {}
   for (let i = 0; i < arr.length; i++) {
@@ -69,3 +78,4 @@ export const HASH_twoNumSum = (arr, tar) => {
   }
   return false
 }
+//#endregion HASH

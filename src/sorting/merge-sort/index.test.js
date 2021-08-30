@@ -1,4 +1,4 @@
-import mergeSort from './merge-sort.js'
+import mergeSort from './merge-sort.js.js'
 import chalk from 'chalk'
 
 // global variable accessible by describe block

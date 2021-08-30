@@ -3,6 +3,12 @@ title: 'Welcome to Jest Repository'
 description: 'Something that you want to do! you can!'
 ---
 
+<script setup>
+// import Counter from '../components/Counter.vue'
+// import CustomCode from '../components/CustomCode.vue'
+import Column from '../components/Column.vue'
+</script>
+
 # {{ $frontmatter.title }}
 
 > {{ $frontmatter.description }}
@@ -11,12 +17,6 @@ description: 'Something that you want to do! you can!'
 - Vitepress + Jest
 
 ## What is this
-
-<script setup>
-import Counter from '../components/Counter.vue'
-// import CustomCode from '../components/CustomCode.vue'
-// import Column from '../components/Counter.vue'
-</script>
 
 <CustomCode />
 
@@ -28,4 +28,18 @@ interface Pokemon {
 }
 ```
 
-<Counter />
+<Column title="halellujah">
+
+<template v-slot:header>
+
+```js{2}
+const name = () => {
+  console.log('hello world')
+}
+```
+
+hello you're fucking up actually
+
+</template>
+
+</Column>

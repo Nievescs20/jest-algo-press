@@ -6,4 +6,4 @@
 
 ## Example.test
 
-<<< @/jest/example.test.js
+<<< @/jest/example.test.js#fs-node
