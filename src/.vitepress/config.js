@@ -18,14 +18,17 @@ module.exports = {
 
     nav: [
       { text: 'Async Week', link: '/async-week/' },
-      { text: 'Grokking', link: '/grokking/', activeMatch: '^/grokking/' },
-      { text: 'Sorting', link: '/sorting/' },
-      { text: 'Jest', link: '/jest/' },
+      { text: 'Algos', link: '/algos/' },
     ],
 
     sidebar: {
       // '/async-week': asyncSidebar,
+      '/algos/grokking/': [
+        { text: 'Grokking', link: '/algos/grokking/' },
+        { text: 'Binary', link: '/algos/grokking/binary-tree-path-sum' },
+      ],
       '/async-week': getAsyncSidebar(),
+      '/algos': getAlgoSidebar(),
       // '/': [{ text: 'hello', link: '/' }],
       '/sorting': [{ text: 'Sorting', link: '/sorting/' }],
       '/jest': [{ text: 'jest', link: '/jest/' }],
@@ -41,5 +44,13 @@ function getAsyncSidebar() {
     { text: 'Async Week', link: '/async-week/' }, // without explicit children, the h2 and h3 will automatically be picked up
     { text: '1 - Two Num Sum', link: '/async-week/1-two-num-sum/' },
     { text: '2 - Max Profit', link: '/async-week/2-max-profit/' },
+  ]
+}
+
+function getAlgoSidebar() {
+  return [
+    { text: 'Algos', link: '/algos/' }, // without explicit children, the h2 and h3 will automatically be picked up
+    { text: 'grokking', link: '/algos/grokking/' },
+    { text: 'leet code', link: '/algos/leet-code/' },
   ]
 }
