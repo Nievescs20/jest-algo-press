@@ -1,5 +1,6 @@
 const multiplicativePersistence = (num) => {
   // constant
-}
+};
 
-export default multiplicativePersistence
+export default multiplicativePersistence;
+

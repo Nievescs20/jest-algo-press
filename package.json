@@ -8,7 +8,7 @@
     "pnpm": ">=3"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "preinstall": "npx only-allow pnpm",
     "dev": "vitepress dev src",
     "build": "vitepress build src",
@@ -31,6 +31,7 @@
   "homepage": "https://github.com/iseykim/merge-sort#readme",
   "devDependencies": {
     "@babel/cli": "^7.14.8",
+    "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@types/jest": "^27.0.1",
     "chalk": "^4.1.2",
