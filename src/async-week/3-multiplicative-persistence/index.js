@@ -1,5 +1,5 @@
 //#region iterative
-const multiplicativePersistence = num => {
+const multiplicativePersistence = (num) => {
   let count = 0
 
   while (num >= 10) {
@@ -18,7 +18,7 @@ const multiplicativePersistence = num => {
 //#endregion iterative
 
 //#region recursive
-export const recursive = num => (num < 10 ? 0 : 1 + recursive(product(num)))
+export const recursive = (num) => (num < 10 ? 0 : 1 + recursive(product(num)))
 //#endregion recursive
 
 //#region helper
