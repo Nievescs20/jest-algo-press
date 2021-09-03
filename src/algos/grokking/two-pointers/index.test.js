@@ -1,4 +1,5 @@
 import pairWithTargetSum, { HASH_pairWithTargetSum } from './pair-with-target-sum'
+import noRepeatSubstring from './no-repeat-substring'
 import removeDuplicates from './remove-duplicates'
 
 describe('pair-with-target-sum', () => {
@@ -17,5 +18,15 @@ describe('remove-duplicates', () => {
 
   test('should remove all duplicates', () => {
     expect(removeDuplicates(arr)).toEqual(3)
+  })
+})
+
+describe('no repeat substring', () => {
+  test('should do something', () => {
+    let str = 'aabc'
+    let str1 = 'abbbb'
+
+    expect(noRepeatSubstring(str)).toBe(3)
+    expect(noRepeatSubstring(str1)).toBe(2)
   })
 })
