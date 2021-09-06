@@ -23,4 +23,16 @@ describe('linked list...', () => {
     list.printList()
     expect(list.gatherList()).toEqual([2, 3, 4, 5])
   })
+
+  it('does something else that you should be afraid of!', () => {
+    const list = new LinkedList()
+    list.insertAtHead(3)
+    list.insertAtHead(1)
+    list.insertAtHead(2)
+    list.insertAtHead(4)
+    list.insertAtHead(5)
+
+    list.findByVal(4)
+    expect()
+  })
 })

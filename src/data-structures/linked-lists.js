@@ -1,3 +1,5 @@
+import { blue } from 'chalk'
+
 export class LinkedList {
   constructor() {
     this.head = null
@@ -18,6 +20,18 @@ export class LinkedList {
     const tail = new Node(val)
     node.next = tail
     return this
+  }
+
+  findByVal(val) {
+    if (this.isEmpty()) return null
+
+    let node = this.head
+    while (node) {
+      if (node.val === val) console.log(`Val: ${blue(val}`)
+      node = node.next
+    }
+
+    return null
   }
 
   isEmpty() {
