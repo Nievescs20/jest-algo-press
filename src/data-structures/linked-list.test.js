@@ -1,7 +1,12 @@
 import { LinkedList, Node } from './linked-lists.js'
+import { findLengthOfLinkedList } from './linked-list/find-length-of-linked-list'
+import { reverseLinkedList } from './linked-list/reverse-linked-list'
+
+const outerList = new LinkedList()
+outerList.insertByValues([1, 2, 3, 4, 5])
 
 describe('linked list...', () => {
-  xit('prints the list', async () => {
+  it('prints the list', async () => {
     // const node = Node(5)
 
     const list = new LinkedList()
@@ -24,15 +29,73 @@ describe('linked list...', () => {
     expect(list.gatherList()).toEqual([2, 3, 4, 5])
   })
 
-  it('does something else that you should be afraid of!', () => {
+  test('should print out empty ', () => {
     const list = new LinkedList()
-    list.insertAtHead(3)
+    list.printList()
+    expect(list)
+  })
+
+  test('should return empty array if head is empty', () => {
+    const list = new LinkedList()
+    expect(list.gatherList()).toEqual([])
+  })
+
+  test('Insertion and deletion at tail works', () => {
+    const list = new LinkedList()
+    list.insertAtTail(1)
+    list.insertAtTail(2)
+    list.insertAtTail(3)
+    list.insertAtTail(4)
+    list.insertAtTail(5)
+    expect(list.gatherList()).toEqual([1, 2, 3, 4, 5])
+
+    list.deleteTail()
+    expect(list.gatherList()).toEqual([1, 2, 3, 4])
+    list.deleteTail()
+    expect(list.gatherList()).toEqual([1, 2, 3])
+    list.deleteTail()
+    list.deleteTail()
+    expect(list.gatherList()).toEqual([1])
+    list.deleteTail()
+    expect(list.gatherList()).toEqual([])
+  })
+
+  test('reset() and insertByValues()', () => {
+    const list = new LinkedList()
     list.insertAtHead(1)
     list.insertAtHead(2)
+    list.insertAtHead(3)
     list.insertAtHead(4)
-    list.insertAtHead(5)
+    list.reset()
+    expect(list.getHead()).toBe(null)
+    list.insertByValues([1, 2, 3, 4, 5])
+    expect(list.gatherList()).toEqual([1, 2, 3, 4, 5])
+  })
+})
 
-    list.findByVal(4)
-    expect()
+describe('Find Length', () => {
+  const list = new LinkedList()
+  list.insertAtTail(1)
+  list.insertAtTail(2)
+  list.insertAtTail(3)
+  list.insertAtTail(4)
+  afterEach(() => {
+    list.insertAtTail()
+  })
+  test('should find length', () => {
+    expect(findLengthOfLinkedList(list)).toBe(4)
+    list.deleteTail()
+    expect(findLengthOfLinkedList(list)).toBe(3)
+  })
+})
+
+describe('Reverse List', () => {
+  const list = new LinkedList()
+  list.insertAtTail(1)
+  list.insertAtTail(2)
+  list.insertAtTail(3)
+  list.insertAtTail(4)
+  test('should reverse linked list', () => {
+    reverseLinkedList()
   })
 })
