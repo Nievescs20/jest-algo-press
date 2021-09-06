@@ -4,6 +4,7 @@ export class LinkedList {
   }
 
   insertAtHead(val) {
+    // this works even if head is empty since node's next will point to null
     const node = new Node(val)
     node.next = this.head
     this.head = node
@@ -11,25 +12,51 @@ export class LinkedList {
   }
 
   insertAtTail(val) {
+    // if empty, set head as new tail and return
+    if (this.isEmpty()) {
+      this.head = new Node(val)
+      return this
+    }
+
+    // start with head
     let node = this.head
+    // loop until node is last of list
     while (node?.next) {
       node = node.next
     }
+    // create tail, put current node's next as tail
     const tail = new Node(val)
     node.next = tail
     return this
   }
 
+  deleteTail(val) {
+    // if empty return null
+    if (this.isEmpty()) return null
+    // if list contains only head, return
+    if (!this.head.next) {
+      const deleted = this.tail
+      this.head = null
+      return deleted
+    }
+    // iterate till second last (node.next.next)
+    // set that next as null, and make it this.tail
+    let curr = this.head
+    while (curr.next.next) {
+      curr = curr.next
+    }
+    const deleted = curr.next
+    curr.next = null
+    this.tail = curr
+    return deleted
+  }
+
   isEmpty() {
-    return this.head == null
+    return this.head === null
   }
 
   printList() {
-    if (this.isEmpty()) {
-      console.log('Empty List!')
-      return
-    }
-
+    // print the list
     let node = this.head
     let str = ''
     while (node) {
@@ -42,10 +69,10 @@ export class LinkedList {
   }
 
   gatherList() {
+    // if empty will return empty res
     let res = []
-    if (this.isEmpty()) return res
-
     let node = this.head
+    // iterate until node is valid
     while (node) {
       res.push(node.val)
       node = node.next
@@ -55,6 +82,17 @@ export class LinkedList {
 
   getHead() {
     return this.head
+  }
+
+  reset() {
+    this.head = null
+  }
+
+  insertByValues(array) {
+    for (const val of array) {
+      // insertAtTail takes in value, not Node...
+      this.insertAtTail(val)
+    }
   }
 }
 
