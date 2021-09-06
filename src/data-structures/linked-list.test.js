@@ -1,5 +1,9 @@
 import { LinkedList, Node } from './linked-lists.js'
 import { findLengthOfLinkedList } from './linked-list/find-length-of-linked-list'
+import { reverseLinkedList } from './linked-list/reverse-linked-list'
+
+const outerList = new LinkedList()
+outerList.insertByValues([1, 2, 3, 4, 5])
 
 describe('linked list...', () => {
   it('prints the list', async () => {
@@ -82,5 +86,16 @@ describe('Find Length', () => {
     expect(findLengthOfLinkedList(list)).toBe(4)
     list.deleteTail()
     expect(findLengthOfLinkedList(list)).toBe(3)
+  })
+})
+
+describe('Reverse List', () => {
+  const list = new LinkedList()
+  list.insertAtTail(1)
+  list.insertAtTail(2)
+  list.insertAtTail(3)
+  list.insertAtTail(4)
+  test('should reverse linked list', () => {
+    reverseLinkedList()
   })
 })
