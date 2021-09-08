@@ -1,6 +1,10 @@
 import { LinkedList, Node } from './linked-lists.js'
 import { findLengthOfLinkedList } from './linked-list/find-length-of-linked-list'
-import { reverseLinkedList } from './linked-list/reverse-linked-list'
+import {
+  reverseLinkedList,
+  RECURSIVE_reverseLinkedList,
+  PARTIAL_reverseLinkedList,
+} from './linked-list/reverse-linked-list'
 
 const outerList = new LinkedList()
 outerList.insertByValues([1, 2, 3, 4, 5])
@@ -90,12 +94,45 @@ describe('Find Length', () => {
 })
 
 describe('Reverse List', () => {
-  const list = new LinkedList()
+  let list = new LinkedList()
   list.insertAtTail(1)
   list.insertAtTail(2)
   list.insertAtTail(3)
   list.insertAtTail(4)
+
+  // make sure the list points to a fresh new list of 1 -> 2 -> 3 -> 4
+  afterEach(() => {
+    list = new LinkedList()
+    list.insertAtTail(1)
+    list.insertAtTail(2)
+    list.insertAtTail(3)
+    list.insertAtTail(4)
+  })
+
   test('should reverse linked list', () => {
-    reverseLinkedList()
+    const reversed = reverseLinkedList(list)
+    expect(reversed.gatherList()).toEqual([4, 3, 2, 1])
+  })
+
+  test('should recursively reverse linked list', () => {
+    const head = RECURSIVE_reverseLinkedList(list.head)
+    const vals = list.gatherList(head)
+    expect(vals).toEqual([4, 3, 2, 1])
+  })
+
+  xtest('should partially reverse linked list', () => {
+    let list = new LinkedList()
+    list.insertAtTail(1)
+    list.insertAtTail(2)
+    list.insertAtTail(3)
+    list.insertAtTail(4)
+    list.insertAtTail(5)
+    list.insertAtTail(6)
+    list.insertAtTail(7)
+    list.insertAtTail(8)
+    list.insertAtTail(9)
+    list.insertAtTail(10)
+
+    PARTIAL_reverseLinkedList()
   })
 })

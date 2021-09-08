@@ -70,14 +70,14 @@ export class LinkedList {
     return str
   }
 
-  gatherList() {
-    // if empty will return empty res
+  gatherList(node) {
+    // if node is empty, use this.head -- useful to check for reversal
     let res = []
-    let node = this.head
+    let curr = node ?? this.head
     // iterate until node is valid
-    while (node) {
-      res.push(node.val)
-      node = node.next
+    while (curr) {
+      res.push(curr.val)
+      curr = curr.next
     }
     return res
   }
